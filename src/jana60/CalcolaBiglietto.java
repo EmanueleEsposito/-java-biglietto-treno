@@ -29,15 +29,17 @@ System.out.print("Inserisci età del passeggero: ");
  double scontoOver65= 0.40;
  double scontoSulPrezzoMinorenni = prezzoBigliettoSenzaSconto * scontoMinorenni;
  double scontoSulPrezzoOver65 = prezzoBigliettoSenzaSconto * scontoOver65;
- double prezzoTotaleViaggioMinorenni = prezzoBigliettoSenzaSconto - scontoMinorenni;
- double prezzoTotaleViaggioOver65 = prezzoBigliettoSenzaSconto - scontoOver65;
+ double prezzoTotaleViaggioMinorenni = prezzoBigliettoSenzaSconto - scontoSulPrezzoMinorenni;
+ double prezzoTotaleViaggioOver65 = prezzoBigliettoSenzaSconto - scontoSulPrezzoOver65;
  
 if(etaDelPassegero < 18) {
-	System.out.println("Prezzo totale viaggio per minorenne: ");
+	System.out.println(prezzoTotaleViaggioMinorenni + "€");
 
-}else	if(etaDelPassegero > 65)
-	System.out.println("Prezzo totale viaggio per over65: ");
-
+}else	if(etaDelPassegero > 65) {
+	System.out.println(prezzoTotaleViaggioOver65 + "€");
+}else {
+	System.out.println(prezzoBigliettoSenzaSconto + "€");
+}
 
  
  
